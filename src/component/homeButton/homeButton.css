@@ -1,0 +1,64 @@
+.letter {
+    opacity: 1;
+    animation: fadeOut 600ms ease-in forwards;
+    animation-delay: calc((17 - var(--order)) * 35ms);
+}
+
+.home-button:hover .letter {
+    opacity: 0;
+    animation: fadeIn 600ms ease-out forwards;
+    animation-delay: calc(var(--order) * 35ms);
+}
+
+.home-button {
+    display: flex;
+}
+
+.exclamation-point {
+    transform: translate(-250px, -3px) rotate(90deg);
+    transition: transform 600ms ease-in;
+    transition-delay: 200ms;
+}
+
+.home-button:hover .exclamation-point {
+    transform: translate(-10px, 0px) rotate(0deg);
+    transition: transform 600ms ease-out;
+    transition-delay: 200ms;
+}
+
+@keyframes fadeIn {
+    30% {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+
+    40%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeOut {
+    30% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    40%, 100% {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+
+}
+
+
+
+.home-button {
+    /*background-color: palevioletred;*/
+    width: 300px;
+}
+
+
+
+
