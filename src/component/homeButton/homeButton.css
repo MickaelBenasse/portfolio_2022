@@ -2,6 +2,12 @@
     opacity: 1;
     animation: fadeOut 600ms ease-in forwards;
     animation-delay: calc((17 - var(--order)) * 35ms);
+    }
+
+.animated {
+    opacity: 0;
+    animation: fadeIn 600ms ease-out forwards;
+    animation-delay: calc(var(--order) * 35ms);
 }
 
 .home-button:hover .letter {

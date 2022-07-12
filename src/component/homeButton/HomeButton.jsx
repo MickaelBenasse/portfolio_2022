@@ -3,7 +3,7 @@ import "./homeButton.css";
 
 export default function HomeButton() {
   return (
-    <div className="home-button">
+    <a className="home-button" href="#">
       <svg
         width="292"
         height="33"
@@ -161,6 +161,6 @@ export default function HomeButton() {
           />
         </svg>
       </div>
-    </div>
+    </a>
   );
 }
