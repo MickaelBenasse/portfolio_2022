@@ -159,14 +159,14 @@ const FontStyles = createGlobalStyle`
   @font-face {
     font-family: 'Roboto';
     src: url(${RobotoBlack}) format('truetype');
-    font-weight: normal;
+    font-weight: 900;
     font-style: normal;
   }
   
   @font-face {
     font-family: 'Roboto';
     src: url(${RobotoBlackItalic}) format('truetype');
-    font-weight: normal;
+    font-weight: 900;
     font-style: italic;
   }
 `;
