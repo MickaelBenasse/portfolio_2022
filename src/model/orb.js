@@ -25,11 +25,11 @@ export class Orb {
     this.radius = random(window.innerHeight / 1.5, window.innerHeight / 3);
 
     // starting points in "time" for the noise/self similar random values
-    this.xOff = random(0, 1000);
-    this.yOff = random(0, 1000);
+    this.xOff = random(0, window.innerWidth);
+    this.yOff = random(0, window.innerHeight / 1.25);
 
     // how quickly the orb move
-    this.inc = 0.001;
+    this.inc = 0.00075;
 
     // PIXI.Graphics is used to draw 2d primitives (in this case a circle) to the canvas
     this.graphics = new PIXI.Graphics();
@@ -48,9 +48,7 @@ export class Orb {
     // the { x, y } origin for each orb (the bottom right of the screen)
     const originX = window.innerWidth;
     const originY =
-      window.innerWidth < 1000
-        ? window.innerHeight
-        : window.innerHeight / 1.375;
+      window.innerWidth < 1000 ? window.innerHeight : window.innerHeight / 2;
 
     // allow each orb to move x distance away from it's { x, y }origin
     return {

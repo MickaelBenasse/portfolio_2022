@@ -58,5 +58,5 @@ export default function AnimatedOrbs() {
     app.stage.filters = [new KawaseBlurFilter(20, 10, true)];
   });
 
-  return <canvas className="orb-canvas" />;
+  return <canvas className="orb-canvas" style={{ height: "125vh" }} />;
 }
