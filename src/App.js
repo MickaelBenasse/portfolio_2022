@@ -1,7 +1,7 @@
-import HomeButton from "./component/homeButton/HomeButton";
+import LandingPage from "./pages/landingPage/LandingPage";
 
 function App() {
-  return <HomeButton />;
+  return <LandingPage />;
 }
 
 export default App;
