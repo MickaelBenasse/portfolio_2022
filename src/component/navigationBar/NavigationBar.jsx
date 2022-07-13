@@ -4,11 +4,11 @@ import HomeButton from "../homeButton/HomeButton";
 
 const NavigationItem = styled.a`
   font-family: "Roboto", sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
-  padding-right: 4rem;
   text-decoration: none;
   color: black;
+  padding-right: ${(props) => (props.isLast ? "0" : "4rem")};
 `;
 
 export default function NavigationBar() {
@@ -27,11 +27,13 @@ export default function NavigationBar() {
       >
         <HomeButton />
       </div>
-      <div>
+      <nav>
         <NavigationItem href="#">Work</NavigationItem>
         <NavigationItem href="#">About</NavigationItem>
-        <NavigationItem href="#">Contact</NavigationItem>
-      </div>
+        <NavigationItem href="#" isLast={true}>
+          Contact
+        </NavigationItem>
+      </nav>
     </div>
   );
 }
