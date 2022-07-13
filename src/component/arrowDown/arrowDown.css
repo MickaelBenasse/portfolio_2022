@@ -1,0 +1,14 @@
+.arrow-down {
+    margin-top: 2rem;
+    animation: translate 3.5s linear infinite;
+    scale: 0.75 0.75;
+}
+
+@keyframes translate {
+    10% {
+        transform: scaleY(1.15);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}
