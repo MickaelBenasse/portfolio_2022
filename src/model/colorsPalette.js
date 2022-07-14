@@ -3,6 +3,11 @@ import { random } from "../functions/functions";
 export class ColorPalette {
   constructor() {
     this.setColors();
+    this.setHexaColors();
+  }
+
+  setHexaColors() {
+    this.colorHexaChoices = ["c4cea1", "d9e0a3", "fdf2b0", "f3d17c", "cf9963"];
   }
 
   setColors() {
@@ -18,5 +23,10 @@ export class ColorPalette {
   randomColor() {
     // pick a random color
     return this.colorChoices[~~random(0, this.colorChoices.length)];
+  }
+
+  randomHexaColor() {
+    // pick a random color
+    return this.colorHexaChoices[~~random(0, this.colorHexaChoices.length)];
   }
 }
