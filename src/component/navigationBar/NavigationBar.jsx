@@ -9,9 +9,19 @@ const NavigationItem = styled.a`
   text-decoration: none;
   color: black;
   padding-right: ${(props) => (props.isLast ? "0" : "4rem")};
+  cursor: pointer;
 `;
 
 export default function NavigationBar() {
+  function scrollTo(element) {
+    const thisElement = document.getElementById(element);
+    thisElement.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+      inline: "start",
+    });
+  }
+
   return (
     <div
       style={{
@@ -28,7 +38,7 @@ export default function NavigationBar() {
         <HomeButton />
       </div>
       <nav>
-        <NavigationItem href="#">Work</NavigationItem>
+        <NavigationItem onClick={() => scrollTo("work")}>Work</NavigationItem>
         <NavigationItem href="#">About</NavigationItem>
         <NavigationItem href="#" isLast={true}>
           Contact
