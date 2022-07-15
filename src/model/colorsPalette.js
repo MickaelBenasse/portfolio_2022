@@ -7,7 +7,7 @@ export class ColorPalette {
   }
 
   setHexaColors() {
-    this.colorHexaChoices = ["c4cea1", "d9e0a3", "fdf2b0", "f3d17c", "cf9963"];
+    this.colorHexaChoices = ["606C38", "283618", "DDA15E", "BC6C25"];
   }
 
   setColors() {
