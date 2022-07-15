@@ -1,6 +1,6 @@
 import React from "react";
 import HomeButton from "../component/homeButton/HomeButton";
-import AnimatedOrbs from "../component/Orbs/AnimatedOrbs";
+import AnimatedOrbs from "../component/orbs/AnimatedOrbs";
 
 export default {
   title: "Animated Orbs",
