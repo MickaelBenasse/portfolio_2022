@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect } from "react";
 import styled from "styled-components";
 import ContactMeLine from "./ContactMeLine";
 
@@ -13,8 +13,6 @@ const ContactTitle = styled.a`
 `;
 
 export default function Contacts() {
-  const [scroll, setScroll] = useState(0);
-
   function copy() {
     navigator.clipboard.writeText("mickaelbenasse@gmail.com").then();
   }
@@ -29,13 +27,12 @@ export default function Contacts() {
 
     window.addEventListener("scroll", () => {
       const scrolling = window.scrollY;
-      setScroll(scrolling);
-      contact1.style.transform = `translateX(${(-scrolling + 2900) * 0.2}px)`;
-      contact2.style.transform = `translateX(${(scrolling - 3900) * 0.75}px)`;
+      contact1.style.transform = `translateX(${(-scrolling + 3100) * 0.2}px)`;
+      contact2.style.transform = `translateX(${(scrolling - 4900) * 0.75}px)`;
       contact3.style.transform = `translateX(${(-scrolling + 2700) * 0.3}px)`;
-      contact4.style.transform = `translateX(${(scrolling - 3900) * 0.5}px)`;
+      contact4.style.transform = `translateX(${(scrolling - 4750) * 0.5}px)`;
       contact5.style.transform = `translateX(${(-scrolling + 2900) * 0.4}px)`;
-      contact6.style.transform = `translateX(${scrolling - 4200}px)`;
+      contact6.style.transform = `translateX(${scrolling - 5000}px)`;
     });
   });
 
@@ -59,12 +56,12 @@ export default function Contacts() {
           overflowX: "hidden",
         }}
       >
-        <ContactMeLine id="contact-1" />
-        <ContactMeLine id="contact-2" translate={(scroll - 4000) / 100} />
-        <ContactMeLine id="contact-3" translate={(-scroll + 2850) / 80} />
-        <ContactMeLine id="contact-4" translate={(scroll - 2900) / 140} />
-        <ContactMeLine id="contact-5" translate={(-scroll + 2870) / 50} />
-        <ContactMeLine id="contact-6" translate={(scroll - 2900) / 100} />
+        <ContactMeLine className="contact-line" id="contact-1" />
+        <ContactMeLine className="contact-line" id="contact-2" />
+        <ContactMeLine className="contact-line" id="contact-3" />
+        <ContactMeLine className="contact-line" id="contact-4" />
+        <ContactMeLine className="contact-line" id="contact-5" />
+        <ContactMeLine className="contact-line" id="contact-6" />
       </div>
       {/*  Content of the section*/}
       <div
