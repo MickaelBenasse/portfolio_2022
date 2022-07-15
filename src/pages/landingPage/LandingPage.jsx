@@ -5,6 +5,7 @@ import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
 import ArrowDown from "../../component/arrowDown/ArrowDown";
 import WorkOverview from "../../component/workOverview/WorkOverview";
 import assetImage from "../../assets/images/test_image.jpg";
+import Contacts from "../../component/contacts/Contacts";
 
 const LandingSectionTitle = styled.h1`
   font-family: "Butler", sans-serif;
@@ -109,9 +110,12 @@ export default function LandingPage() {
       </section>
       <section id="work">
         <WorkOverview img={assetImage} title="Digiole" />
+        <WorkOverview img={assetImage} title="SoLoSo" />
+        <WorkOverview img={assetImage} title="AssoEsaip" />
       </section>
-      <WorkOverview img={assetImage} title="SoLoSo" />
-      <WorkOverview img={assetImage} title="AssoEsaip" />
+      <section style={{ position: "relative" }}>
+        <Contacts />
+      </section>
     </div>
   );
 }
