@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { random } from "../../functions/functions";
 
 export default function AnimatedBlob({ title, colorPalette, img, underText }) {
@@ -48,11 +48,10 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
       aboveText.style.transform = `translate(${realLeftPosition}px, ${realTopPosition}px)`;
     }
   }
-  console.log(aboveText);
 
   useLayoutEffect(() => {
     positionText();
-    window.onresize = positionText;
+    window.addEventListener("resize", positionText);
   });
 
   initialPath = blobArray[Math.ceil(random(0, blobArray.length - 1))];
