@@ -6,6 +6,7 @@ import ArrowDown from "../../component/arrowDown/ArrowDown";
 import WorkOverview from "../../component/workOverview/WorkOverview";
 import assetImage from "../../assets/images/test_image.jpg";
 import Contacts from "../../component/contacts/Contacts";
+import AboutOverview from "../../component/aboutOverview/AboutOverview";
 
 const LandingSectionTitle = styled.h1`
   font-family: "Butler", sans-serif;
@@ -113,7 +114,10 @@ export default function LandingPage() {
         <WorkOverview img={assetImage} title="SoLoSo" />
         <WorkOverview img={assetImage} title="AssoEsaip" />
       </section>
-      <section style={{ position: "relative" }}>
+      <section id="about">
+        <AboutOverview />
+      </section>
+      <section id="contact" style={{ position: "relative" }}>
         <Contacts />
       </section>
     </div>
