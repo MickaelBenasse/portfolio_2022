@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { random } from "../../functions/functions";
 
 export default function AnimatedBlob({ title, colorPalette, img, underText }) {
