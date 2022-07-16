@@ -19,7 +19,8 @@ export default function WorkOverview({ img, title }) {
 
   useLayoutEffect(() => {
     setUnderText(document.getElementById(`under-text-${title}`));
-  });
+  }, [underText]);
+
   return (
     <section
       style={{

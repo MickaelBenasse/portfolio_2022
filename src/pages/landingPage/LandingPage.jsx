@@ -23,7 +23,9 @@ const LandingSectionSubTitle = styled.h2`
   margin: 0;
 `;
 
-const SecondSectionTitle = styled.h2.attrs({ className: "cursor-email" })`
+const SecondSectionTitle = styled.h2.attrs({
+  className: "cursor-email cursor-hover",
+})`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 5rem;

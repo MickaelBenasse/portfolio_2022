@@ -3,7 +3,9 @@ import styled from "styled-components";
 import ContactMeLine from "./ContactMeLine";
 import { copy } from "../../functions/functions";
 
-const ContactTitleEmail = styled.a.attrs({ className: "cursor-email" })`
+const ContactTitleEmail = styled.a.attrs({
+  className: "cursor-email cursor-hover",
+})`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 150px;
@@ -48,7 +50,7 @@ export default function Contacts() {
 
     // For all the elements with the class "cursor-email" with apply those modifications.
     // Cursor effect with the "Email me" inside.
-    cursorEmail.forEach((thisCursorHover) => {
+    cursorEmail.forEach(function (thisCursorHover) {
       // Change the cursor to "Email me"
       thisCursorHover.addEventListener("mouseenter", () => {
         cursor.style.height = "100px";
