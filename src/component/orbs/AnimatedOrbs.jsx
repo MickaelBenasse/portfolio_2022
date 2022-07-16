@@ -61,7 +61,7 @@ export default function AnimatedOrbs() {
   return (
     <canvas
       className="orb-canvas"
-      style={{ height: "125vh", width: "100vw" }}
+      style={{ height: "125vh", width: "100vw", minHeight: "600px" }}
     />
   );
 }

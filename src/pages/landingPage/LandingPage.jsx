@@ -13,6 +13,12 @@ const LandingSectionTitle = styled.h1`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 150px;
+  @media screen and (max-width: 992px) {
+    font-size: 100px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
   margin: 0;
 `;
 
@@ -21,6 +27,12 @@ const LandingSectionSubTitle = styled.h2`
   font-weight: normal;
   font-size: 1.5rem;
   margin: 0;
+  @media screen and (max-width: 992px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 0.6rem;
+  }
 `;
 
 const SecondSectionTitle = styled.h2.attrs({
@@ -31,6 +43,15 @@ const SecondSectionTitle = styled.h2.attrs({
   font-size: 5rem;
   margin: 0;
   text-align: center;
+  @media screen and (max-width: 1150px) {
+    font-size: 4rem;
+  }
+  @media screen and (max-width: 992px) {
+    font-size: 3.5rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 
 export default function LandingPage() {
@@ -44,6 +65,7 @@ export default function LandingPage() {
   return (
     <div
       style={{
+        minHeight: "600px",
         width: "100vw",
         height: "200vh",
       }}
@@ -54,6 +76,7 @@ export default function LandingPage() {
       </div>
       <section
         style={{
+          minHeight: "600px",
           justifyContent: "center",
           alignItems: "center",
           alignContent: "center",
@@ -79,10 +102,17 @@ export default function LandingPage() {
                 style={{
                   display: "flex",
                   alignItems: "end",
+                  backgroundColor: "brown",
                 }}
               >
                 <LandingSectionTitle>Mickaël</LandingSectionTitle>
-                <div style={{ marginBottom: "2.1rem", marginLeft: "2rem" }}>
+                <div
+                  style={{
+                    marginBottom: "4.5%",
+                    marginLeft: "5%",
+                    backgroundColor: "yellow",
+                  }}
+                >
                   <LandingSectionSubTitle>JUNIOR FRONT</LandingSectionSubTitle>
                   <LandingSectionSubTitle>END DEVELOPER</LandingSectionSubTitle>
                 </div>
@@ -102,6 +132,7 @@ export default function LandingPage() {
       <section
         id="second-section"
         style={{
+          minHeight: "600px",
           height: "100vh",
           display: "flex",
           justifyContent: "center",
