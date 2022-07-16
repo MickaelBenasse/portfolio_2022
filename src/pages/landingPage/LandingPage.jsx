@@ -103,7 +103,6 @@ export default function LandingPage() {
                 style={{
                   display: "flex",
                   alignItems: "end",
-                  backgroundColor: "brown",
                 }}
               >
                 <LandingSectionTitle>Mickaël</LandingSectionTitle>
@@ -111,7 +110,6 @@ export default function LandingPage() {
                   style={{
                     marginBottom: "4.5%",
                     marginLeft: "5%",
-                    backgroundColor: "yellow",
                   }}
                 >
                   <LandingSectionSubTitle>JUNIOR FRONT</LandingSectionSubTitle>

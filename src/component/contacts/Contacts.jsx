@@ -13,6 +13,21 @@ const ContactTitleEmail = styled.a.attrs({
   text-decoration: none;
   color: black;
   cursor: none;
+
+  @media screen and (max-width: 992px) {
+    font-size: 5rem;
+    text-align: center;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+  
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    padding-bottom: 0;
 `;
 
 const ContactTitle = styled.a.attrs({ className: "cursor-hover" })`
@@ -23,6 +38,15 @@ const ContactTitle = styled.a.attrs({ className: "cursor-hover" })`
   text-decoration: none;
   color: black;
   cursor: none;
+
+  @media screen and (max-width: 992px) {
+    font-size: 5rem;
+  }
+  @media screen and (max-width: 600px) {
+    padding-top: 4rem;
+    margin-left: 0 !important;
+    text-align: center;
+  }
 `;
 
 export default function Contacts() {
@@ -91,6 +115,7 @@ export default function Contacts() {
     <section
       style={{
         display: "flex",
+        flexDirection: "column",
         height: "100vh",
         width: "100vw",
         justifyContent: "center",
@@ -125,13 +150,7 @@ export default function Contacts() {
         }}
       >
         <div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              paddingBottom: "5rem",
-            }}
-          >
+          <Wrapper>
             <ContactTitleEmail onClick={handleEmailMe} isFirst={true}>
               Email
             </ContactTitleEmail>
@@ -142,7 +161,7 @@ export default function Contacts() {
             >
               GitHub
             </ContactTitle>
-          </div>
+          </Wrapper>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <ContactTitle
               href="https://www.linkedin.com/in/micka%C3%ABl-benasse/"
@@ -153,6 +172,16 @@ export default function Contacts() {
           </div>
         </div>
       </div>
+      <p
+        style={{
+          fontFamily: "Roboto",
+          fontWeight: 300,
+          position: "relative",
+          bottom: "-30px",
+        }}
+      >
+        © 2022
+      </p>
     </section>
   );
 }

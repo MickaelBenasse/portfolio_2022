@@ -30,7 +30,6 @@ const Nav = styled.nav`
 `;
 
 const NavigationBarContainer = styled.div`
-  background-color: brown;
   display: flex;
   justify-content: space-between;
   align-items: end;

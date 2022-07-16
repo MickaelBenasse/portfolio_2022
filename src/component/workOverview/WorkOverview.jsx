@@ -17,6 +17,11 @@ const WorkTitle = styled.h3`
     position: relative;
     z-index: 10;
   }
+  @media screen and (max-height: 600px) {
+    position: relative;
+    z-index: 10;
+  }
+
   @media screen and (max-width: 600px) {
     font-size: 4rem;
   }

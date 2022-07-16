@@ -7,6 +7,10 @@ const ContactMe = styled.p`
   font-size: 6rem;
   margin: 0 3rem 0 0;
   width: 100%;
+
+  @media screen and (max-width: 992px) {
+    font-size: 5rem;
+  }
 `;
 
 export default function ContactMeLine({ id }) {

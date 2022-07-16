@@ -28,7 +28,6 @@ export default function AboutOverview() {
   return (
     <div
       style={{
-        backgroundColor: "yellow",
         minHeight: "600px",
         height: "100vh",
         width: "100vw",

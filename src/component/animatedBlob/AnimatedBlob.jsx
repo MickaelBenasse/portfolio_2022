@@ -11,12 +11,15 @@ const WorkTitle = styled.text.attrs((props) => ({ id: `${props.id}` }))`
   @media screen and (max-width: 992px) {
     display: none;
   }
+  @media screen and (max-height: 600px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div.attrs((props) => ({ id: `${props.id}` }))`
   min-height: 600px;
   position: relative;
-  width: 70vw;
+  width: 1000px;
   height: 100%;
   top: 50%;
   left: 50%;
