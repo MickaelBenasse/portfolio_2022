@@ -50,9 +50,16 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
   }
 
   useLayoutEffect(() => {
-    positionText();
     window.addEventListener("resize", positionText);
+
+    waiting().then(() => {
+      positionText();
+    });
   });
+
+  async function waiting() {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
 
   initialPath = blobArray[Math.ceil(random(0, blobArray.length - 1))];
   // Create the animation shape; we will have 5 blob of shape different and then add the first one as the last one to create a loop.
