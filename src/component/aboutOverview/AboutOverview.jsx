@@ -8,6 +8,9 @@ const AboutOverviewText = styled.p`
   font-size: 2.5rem;
   margin: 0;
   text-align: center;
+  @media screen and (max-width: 992px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const AboutRedirection = styled.p`
@@ -16,12 +19,17 @@ const AboutRedirection = styled.p`
   font-size: 3rem;
   text-align: center;
   margin: 0;
+  @media screen and (max-width: 992px) {
+    font-size: 2rem;
+  }
 `;
 
 export default function AboutOverview() {
   return (
     <div
       style={{
+        backgroundColor: "yellow",
+        minHeight: "600px",
         height: "100vh",
         width: "100vw",
         display: "flex",

@@ -11,6 +11,33 @@ const WorkTitle = styled.h3`
   margin: 0;
   text-align: center;
   color: ${(props) => props.color};
+
+  @media screen and (max-width: 992px) {
+    font-size: 7.5rem;
+    position: relative;
+    z-index: 10;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
+`;
+
+const Section = styled.section`
+  min-height: 800px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  @media screen and (max-width: 992px) {
+    min-height: 600px;
+  }
+  @media screen and (max-width: 600px) {
+    min-height: 450px;
+  }
+  @media screen and (max-width: 400px) {
+    min-height: 300px;
+  }
 `;
 
 export default function WorkOverview({ img, title }) {
@@ -22,15 +49,7 @@ export default function WorkOverview({ img, title }) {
   }, [title]);
 
   return (
-    <section
-      style={{
-        width: "100vw",
-        height: "110vh",
-        display: "flex",
-        justifyContent: "center",
-        position: "relative",
-      }}
-    >
+    <Section>
       <div>
         <div id={`under-text-${title}`}>
           <WorkTitle>{title}</WorkTitle>
@@ -52,7 +71,7 @@ export default function WorkOverview({ img, title }) {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

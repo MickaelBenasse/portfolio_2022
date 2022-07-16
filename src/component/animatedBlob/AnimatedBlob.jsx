@@ -1,5 +1,59 @@
 import React, { useLayoutEffect } from "react";
 import { random } from "../../functions/functions";
+import styled from "styled-components";
+
+const WorkTitle = styled.text.attrs((props) => ({ id: `${props.id}` }))`
+  font-family: "Butler", sans-serif;
+  font-weight: 300;
+  font-size: 9rem;
+  fill: ${(props) => props.color};
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+`;
+
+const Wrapper = styled.div.attrs((props) => ({ id: `${props.id}` }))`
+  min-height: 600px;
+  position: relative;
+  width: 70vw;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 992px) {
+    width: 750px;
+    height: 450px;
+  }
+  @media screen and (max-width: 600px) {
+    width: 400px;
+    height: 240px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 300px;
+    height: 180px;
+  }
+`;
+
+const SVG = styled.svg.attrs({ viewBox: "0 0 1000 600" })`
+  width: 1000px;
+  height: 600px;
+  padding-top: 100px;
+
+  @media screen and (max-width: 992px) {
+    width: 750px;
+    height: 450px;
+  }
+  @media screen and (max-width: 600px) {
+    width: 400px;
+    height: 240px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 300px;
+    height: 180px;
+  }
+`;
 
 export default function AnimatedBlob({ title, colorPalette, img, underText }) {
   const blobArray = [
@@ -89,22 +143,9 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
   );
 
   return (
-    <div
-      id={`wrapper-${title}`}
-      style={{
-        position: "relative",
-        width: "70vw",
-        height: "100%",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-      }}
-    >
-      <svg
-        width="1000px"
-        height="600px"
+    <Wrapper id={`wrapper-${title}`}>
+      <SVG
         viewBox="0 0 1000 600"
-        fill="#546554"
         style={{
           paddingTop: "100px",
         }}
@@ -128,19 +169,16 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
           <path fill={`url(#imageId-${title})`} d={initialPath}>
             {animate}
           </path>
-          <svg width="1000px" height="600px" fill="brown">
-            <text
+          <svg width="1000px" height="600px">
+            <WorkTitle
               id={`above-text-${title}`}
-              fontWeight="300"
-              fontFamily="Butler"
-              fontSize="9rem"
-              fill={`#${colorPalette.randomHexaColor()}`}
+              color={`#${colorPalette.randomHexaColor()}`}
             >
               {title}
-            </text>
+            </WorkTitle>
           </svg>
         </g>
-      </svg>
-    </div>
+      </SVG>
+    </Wrapper>
   );
 }

@@ -13,13 +13,14 @@ const LandingSectionTitle = styled.h1`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 150px;
+  margin: 0;
+
   @media screen and (max-width: 992px) {
     font-size: 100px;
   }
   @media screen and (max-width: 600px) {
     font-size: 4rem;
   }
-  margin: 0;
 `;
 
 const LandingSectionSubTitle = styled.h2`
