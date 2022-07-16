@@ -72,14 +72,13 @@ export default function LandingPage() {
         }
       });
     });
-  }, []);
+  });
 
   // Let the user know that we copy the email to the clipboard.
   function handleEmailMe() {
     copy();
     const cursor = document.getElementById("cursor");
     if (cursor.children.length === 1) {
-      console.log(cursor.firstChild);
       cursor.firstChild.textContent = "Email copied!";
     }
   }

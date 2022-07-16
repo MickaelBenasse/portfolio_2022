@@ -47,7 +47,6 @@ export default function Contacts() {
     copy();
     const cursor = document.getElementById("cursor");
     if (cursor.children.length === 1) {
-      console.log(cursor.firstChild);
       cursor.firstChild.textContent = "Email copied!";
     }
   }
