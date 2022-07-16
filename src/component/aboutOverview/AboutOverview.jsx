@@ -53,6 +53,7 @@ export default function AboutOverview() {
           }}
         >
           <a
+            className="cursor-hover"
             href="#"
             style={{
               flexShrink: 0,
@@ -61,13 +62,17 @@ export default function AboutOverview() {
               justifyContent: "center",
               textDecoration: "none",
               color: "black",
+              cursor: "none",
             }}
           >
-            <AboutRedirection>More about me</AboutRedirection>
+            <div className="cursor-hover">
+              <AboutRedirection>More about me</AboutRedirection>
+            </div>
             <div
+              className="cursor-hover"
               style={{
-                marginLeft: "2rem",
-                transform: "rotate(-90deg)",
+                paddingTop: "0rem",
+                transform: "rotate(-90deg) translateY(1.5rem)",
               }}
             >
               <ArrowDown />

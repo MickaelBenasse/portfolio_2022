@@ -1,22 +1,29 @@
 import React, { useLayoutEffect } from "react";
 import styled from "styled-components";
 import ContactMeLine from "./ContactMeLine";
+import { copy } from "../../functions/functions";
 
-const ContactTitle = styled.a`
+const ContactTitleEmail = styled.a.attrs({ className: "cursor-email" })`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 150px;
   margin: 0;
   text-decoration: none;
   color: black;
-  cursor: pointer;
+  cursor: none;
+`;
+
+const ContactTitle = styled.a.attrs({ className: "cursor-hover" })`
+  font-family: "Butler", sans-serif;
+  font-weight: 300;
+  font-size: 150px;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  cursor: none;
 `;
 
 export default function Contacts() {
-  function copy() {
-    navigator.clipboard.writeText("mickaelbenasse@gmail.com").then();
-  }
-
   useLayoutEffect(() => {
     const contact1 = document.getElementById("contact-1");
     const contact2 = document.getElementById("contact-2");
@@ -35,6 +42,15 @@ export default function Contacts() {
       contact6.style.transform = `translateX(${scrolling - 5000}px)`;
     });
   });
+
+  function handleEmailMe() {
+    copy();
+    const cursor = document.getElementById("cursor");
+    if (cursor.children.length === 1) {
+      console.log(cursor.firstChild);
+      cursor.firstChild.textContent = "Email copied!";
+    }
+  }
 
   return (
     <section
@@ -81,7 +97,9 @@ export default function Contacts() {
               paddingBottom: "5rem",
             }}
           >
-            <ContactTitle onClick={copy}>Email</ContactTitle>
+            <ContactTitleEmail onClick={handleEmailMe} isFirst={true}>
+              Email
+            </ContactTitleEmail>
             <ContactTitle
               href="https://github.com/MickaelBenasse"
               target="_blank"

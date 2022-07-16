@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import styled from "styled-components";
 import HomeButton from "../homeButton/HomeButton";
+import { scrollTo } from "../../functions/functions";
 
 const NavigationItem = styled.a.attrs({
   className: "cursor-hover",
@@ -14,32 +15,26 @@ const NavigationItem = styled.a.attrs({
 `;
 
 export default function NavigationBar() {
+  // Animation on the cursor
   useLayoutEffect(() => {
-    const cursorHover = document.querySelector(".cursor-hover");
+    const cursorHover = document.querySelectorAll(".cursor-hover");
     const cursor = document.getElementById("cursor");
 
-    cursorHover.addEventListener("mouseenter", () => {
-      cursor.style.height = "60px";
-      cursor.style.width = "60px";
-      cursor.style.backgroundColor = "#606C38";
-      cursor.style.opacity = "0.5";
-    });
+    cursorHover.forEach(function (elementHover) {
+      elementHover.addEventListener("mouseenter", () => {
+        cursor.style.height = "60px";
+        cursor.style.width = "60px";
+        cursor.style.backgroundColor = "#606C38";
+        cursor.style.opacity = "0.5";
+      });
 
-    cursorHover.addEventListener("mouseleave", () => {
-      cursor.style.height = "30px";
-      cursor.style.width = "30px";
-      cursor.style.backgroundColor = "transparent";
+      elementHover.addEventListener("mouseleave", () => {
+        cursor.style.height = "30px";
+        cursor.style.width = "30px";
+        cursor.style.backgroundColor = "transparent";
+      });
     });
   });
-
-  function scrollTo(element) {
-    const thisElement = document.getElementById(element);
-    thisElement.scrollIntoView({
-      block: "start",
-      behavior: "smooth",
-      inline: "start",
-    });
-  }
 
   return (
     <div

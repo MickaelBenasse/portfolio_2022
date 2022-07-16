@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import styled from "styled-components";
 import NavigationBar from "../../component/navigationBar/NavigationBar";
 import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
@@ -7,6 +7,7 @@ import WorkOverview from "../../component/workOverview/WorkOverview";
 import assetImage from "../../assets/images/test_image.jpg";
 import Contacts from "../../component/contacts/Contacts";
 import AboutOverview from "../../component/aboutOverview/AboutOverview";
+import { copy } from "../../functions/functions";
 
 const LandingSectionTitle = styled.h1`
   font-family: "Butler", sans-serif;
@@ -22,7 +23,7 @@ const LandingSectionSubTitle = styled.h2`
   margin: 0;
 `;
 
-const SecondSectionTitle = styled.h2`
+const SecondSectionTitle = styled.h2.attrs({ className: "cursor-email" })`
   font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 5rem;
@@ -31,6 +32,58 @@ const SecondSectionTitle = styled.h2`
 `;
 
 export default function LandingPage() {
+  // Animation on the cursor
+  useLayoutEffect(() => {
+    const cursorHover = document.querySelectorAll(".cursor-email");
+    const cursor = document.getElementById("cursor");
+    const cursorPoint = document.getElementById("cursor-point");
+
+    // For all the elements with the class "cursor-email" with apply those modifications.
+    cursorHover.forEach((thisCursorHover) => {
+      // Change the cursor to "Email me"
+      thisCursorHover.addEventListener("mouseenter", () => {
+        cursor.style.height = "100px";
+        cursor.style.width = "100px";
+        cursor.style.opacity = "1";
+        cursor.style.backgroundColor = "#606C38";
+        cursorPoint.style.opacity = "0";
+
+        if (cursor.children.length === 0) {
+          const element = document.createElement("p");
+
+          const textNode = document.createTextNode("Email me");
+          cursor.style.cssText =
+            "font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.25rem; display: flex; justify-content: center; align-items: center; text-align: center;";
+          element.appendChild(textNode);
+
+          cursor.appendChild(element);
+        }
+      });
+
+      // Remove the text and put the cursor back to normal.
+      thisCursorHover.addEventListener("mouseleave", () => {
+        cursorPoint.style.opacity = "1";
+
+        cursor.style.height = "30px";
+        cursor.style.width = "30px";
+        cursor.style.backgroundColor = "transparent";
+        if (cursor.children.length === 1) {
+          cursor.firstChild.remove();
+        }
+      });
+    });
+  }, []);
+
+  // Let the user know that we copy the email to the clipboard.
+  function handleEmailMe() {
+    copy();
+    const cursor = document.getElementById("cursor");
+    if (cursor.children.length === 1) {
+      console.log(cursor.firstChild);
+      cursor.firstChild.textContent = "Email copied!";
+    }
+  }
+
   return (
     <div
       style={{
@@ -90,6 +143,7 @@ export default function LandingPage() {
         </div>
       </section>
       <section
+        id="second-section"
         style={{
           height: "100vh",
           display: "flex",
@@ -103,10 +157,19 @@ export default function LandingPage() {
             alignItems: "center",
           }}
         >
-          <SecondSectionTitle>
-            I help people and businesses create their digital identity,
-            reflecting their personalities and creativity in an impactful way.
-          </SecondSectionTitle>
+          <div
+            style={{
+              cursor: "none",
+              textDecoration: "none",
+              color: "black",
+            }}
+            onClick={() => handleEmailMe()}
+          >
+            <SecondSectionTitle>
+              I help people and businesses create their digital identity,
+              reflecting their personalities and creativity in an impactful way.
+            </SecondSectionTitle>
+          </div>
         </div>
       </section>
       <section id="work">
