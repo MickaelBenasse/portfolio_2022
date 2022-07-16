@@ -45,6 +45,24 @@ const Section = styled.section`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media screen and (max-width: 992px) {
+    top: -200px;
+  }
+  @media screen and (max-width: 600px) {
+    top: -300px;
+  }
+  @media screen and (max-width: 400px) {
+    top: -250px;
+  }
+`;
+
 export default function WorkOverview({ img, title }) {
   const [underText, setUnderText] = useState(null);
   const colorPalette = new ColorPalette();
@@ -59,22 +77,14 @@ export default function WorkOverview({ img, title }) {
         <div id={`under-text-${title}`}>
           <WorkTitle>{title}</WorkTitle>
         </div>
-        <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        >
+        <Wrapper>
           <AnimatedBlob
             title={title}
             colorPalette={colorPalette}
             img={img}
             underText={underText}
           />
-        </div>
+        </Wrapper>
       </div>
     </Section>
   );

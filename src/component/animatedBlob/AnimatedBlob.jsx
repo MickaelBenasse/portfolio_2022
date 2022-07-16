@@ -17,7 +17,6 @@ const WorkTitle = styled.text.attrs((props) => ({ id: `${props.id}` }))`
 `;
 
 const Wrapper = styled.div.attrs((props) => ({ id: `${props.id}` }))`
-  min-height: 600px;
   position: relative;
   width: 1000px;
   height: 100%;
@@ -53,6 +52,7 @@ const SVG = styled.svg.attrs({ viewBox: "0 0 1000 600" })`
     height: 240px;
   }
   @media screen and (max-width: 400px) {
+    padding-top: 0;
     width: 300px;
     height: 180px;
   }
@@ -147,12 +147,7 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
 
   return (
     <Wrapper id={`wrapper-${title}`}>
-      <SVG
-        viewBox="0 0 1000 600"
-        style={{
-          paddingTop: "100px",
-        }}
-      >
+      <SVG viewBox="0 0 1000 600">
         <defs>
           <pattern
             id={`imageId-${title}`}
