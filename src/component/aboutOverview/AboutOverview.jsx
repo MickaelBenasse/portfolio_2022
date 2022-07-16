@@ -41,9 +41,9 @@ export default function AboutOverview() {
         <AboutOverviewText>
           I am a curious person, living my dream of my biggest my passion which
           is developing. I have a strong empathy towards customers and love to
-          translate complex problems into simple & intuitive solutions. I am
-          also a dedicated worker who wants to learn things while crafting
-          user-centric products.
+          translate complex problems into simple & intuitive solutions. <br />
+          <br />I am also a dedicated worker who wants to learn things while
+          crafting user-centric products.
         </AboutOverviewText>
         <div
           style={{
