@@ -54,7 +54,7 @@ export default function AboutOverview() {
         >
           <a
             className="cursor-hover"
-            href="#"
+            href="/"
             style={{
               flexShrink: 0,
               flexGrow: 0,

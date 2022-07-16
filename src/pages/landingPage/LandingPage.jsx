@@ -38,9 +38,7 @@ export default function LandingPage() {
   function handleEmailMe() {
     copy();
     const cursor = document.getElementById("cursor");
-    if (cursor.children.length === 1) {
-      cursor.firstChild.textContent = "Email copied!";
-    }
+    cursor.innerText = "Email copied!";
   }
 
   return (
