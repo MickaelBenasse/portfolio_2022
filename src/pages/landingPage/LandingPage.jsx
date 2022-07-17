@@ -14,6 +14,18 @@ const LandingSectionTitle = styled.h1`
   font-weight: 300;
   font-size: 150px;
   margin: 0;
+  height: 11.5rem;
+  animation: translateIn 1s ease-in-out;
+  animation-delay: calc(var(--order) * 250ms);
+
+  @keyframes translateIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 
   @media screen and (max-width: 992px) {
     font-size: 100px;
@@ -28,12 +40,39 @@ const LandingSectionSubTitle = styled.h2`
   font-weight: normal;
   font-size: 1.5rem;
   margin: 0;
+  animation: translateIn 1s ease-in-out;
+  animation-delay: 750ms;
+
+  @keyframes translateIn {
+    from {
+      transform: translateY(200%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
   @media screen and (max-width: 992px) {
     font-size: 1rem;
   }
   @media screen and (max-width: 600px) {
     font-size: 0.6rem;
   }
+`;
+
+const HiddenWrapper = styled.div`
+  overflow: hidden;
+  height: 11.5rem;
+  visibility: hidden;
+  animation: 0s linear 500ms forwards hidden;
+  animation-delay: calc(var(--order) * 500ms);
+
+
+  @keyframes hidden {
+    to {
+      visibility: visible;
+    }
+  },
 `;
 
 const SecondSectionTitle = styled.h2.attrs({
@@ -98,23 +137,40 @@ export default function LandingPage() {
             }}
           >
             <div>
-              <LandingSectionTitle>Bonjour, I'm</LandingSectionTitle>
+              <div style={{ overflow: "hidden", height: "11.5rem" }}>
+                <LandingSectionTitle style={{ "--order": 0 }}>
+                  Bonjour, I'm
+                </LandingSectionTitle>
+              </div>
               <div
                 style={{
                   display: "flex",
                   alignItems: "end",
                 }}
               >
-                <LandingSectionTitle>Mickaël</LandingSectionTitle>
-                <div
+                <HiddenWrapper style={{ "--order": 1 }}>
+                  <LandingSectionTitle style={{ "--order": 1 }}>
+                    Mickaël
+                  </LandingSectionTitle>
+                </HiddenWrapper>
+                <HiddenWrapper
                   style={{
+                    "--order": 2,
+                    display: "flex",
+                    alignItems: "end",
                     marginBottom: "4.5%",
                     marginLeft: "5%",
                   }}
                 >
-                  <LandingSectionSubTitle>JUNIOR FRONT</LandingSectionSubTitle>
-                  <LandingSectionSubTitle>END DEVELOPER</LandingSectionSubTitle>
-                </div>
+                  <div>
+                    <LandingSectionSubTitle>
+                      JUNIOR FRONT
+                    </LandingSectionSubTitle>
+                    <LandingSectionSubTitle>
+                      END DEVELOPER
+                    </LandingSectionSubTitle>
+                  </div>
+                </HiddenWrapper>
               </div>
             </div>
           </div>
