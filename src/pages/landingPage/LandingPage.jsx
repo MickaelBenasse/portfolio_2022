@@ -5,6 +5,7 @@ import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
 import ArrowDown from "../../component/arrowDown/ArrowDown";
 import WorkOverview from "../../component/workOverview/WorkOverview";
 import assetImage from "../../assets/images/test_image.jpg";
+import soloso from "../../assets/images/SoLoSo.png";
 import Contacts from "../../component/contacts/Contacts";
 import AboutOverview from "../../component/aboutOverview/AboutOverview";
 import { copy } from "../../functions/functions";
@@ -217,7 +218,7 @@ export default function LandingPage() {
       </section>
       <section id="work">
         <WorkOverview img={assetImage} title="Digiole" />
-        <WorkOverview img={assetImage} title="SoLoSo" />
+        <WorkOverview img={soloso} title="SoLoSo" />
         <WorkOverview img={assetImage} title="AssoEsaip" />
       </section>
       <section id="about">
