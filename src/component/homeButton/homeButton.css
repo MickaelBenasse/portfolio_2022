@@ -12,6 +12,7 @@
 
 .home-button {
     display: flex;
+    width: 300px;
 }
 
 .exclamation-point {
@@ -26,6 +27,37 @@
     transition-delay: 200ms;
 }
 
+@media screen and (max-width: 992px) {
+    .home-button {
+        scale: 0.75;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home-button {
+        width: 200px;
+    }
+
+    .home-button:hover .letter {
+        animation: none;
+    }
+
+    .letter {
+        animation: none;
+        display: none;
+    }
+
+    .exclamation-point {
+        transform: translate(-160px, -3px) rotate(90deg);
+        transition: none;
+    }
+
+    .home-button:hover .exclamation-point {
+        transform: translate(-160px, -3px) rotate(90deg);
+        transition: none;
+    }
+}
+
 @keyframes fadeIn {
     30% {
         opacity: 0;
@@ -36,7 +68,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 @keyframes fadeOut {
@@ -49,16 +80,4 @@
         opacity: 0;
         transform: translateY(40%);
     }
-
 }
-
-
-
-.home-button {
-    /*background-color: palevioletred;*/
-    width: 300px;
-}
-
-
-
-

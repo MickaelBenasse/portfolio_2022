@@ -1,0 +1,36 @@
+body {
+    background-color: #FEFAE0;
+    margin: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: none;
+}
+
+.whole-cursor {
+     position: fixed;
+     border-radius: 50%;
+     transform: translateX(-50%) translateY(-50%);
+     pointer-events: none;
+     left: -100px;
+     top: 50%;
+     z-index: 10000;
+     cursor: none;
+ }
+
+.cursor {
+    border: 1px solid #606C38;
+    height: 30px;
+    width: 30px;
+    transition: all 100ms ease-out;
+}
+
+.cursor-point {
+    background-color: #606C38;
+    height: 5px;
+    width: 5px;
+    transition: all 50ms ease-out;
+}
