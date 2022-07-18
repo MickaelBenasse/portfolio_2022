@@ -6,6 +6,8 @@ import ArrowDown from "../../component/arrowDown/ArrowDown";
 import WorkOverview from "../../component/workOverview/WorkOverview";
 import assetImage from "../../assets/images/test_image.jpg";
 import soloso from "../../assets/images/SoLoSo.png";
+import assoEsaip from "../../assets/images/AssoEsaip.png";
+import digiole from "../../assets/images/Digiole.png";
 import Contacts from "../../component/contacts/Contacts";
 import AboutOverview from "../../component/aboutOverview/AboutOverview";
 import { copy } from "../../functions/functions";
@@ -217,9 +219,9 @@ export default function LandingPage() {
         </div>
       </section>
       <section id="work">
-        <WorkOverview img={assetImage} title="Digiole" />
+        <WorkOverview img={digiole} title="Digiole" />
         <WorkOverview img={soloso} title="SoLoSo" />
-        <WorkOverview img={assetImage} title="AssoEsaip" />
+        <WorkOverview img={assoEsaip} title="AssoEsaip" />
       </section>
       <section id="about">
         <AboutOverview />
