@@ -1,13 +1,15 @@
 .letter {
-    opacity: 1;
-    animation: fadeOut 600ms ease-in forwards;
-    animation-delay: calc((17 - var(--order)) * 35ms);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 300ms ease-in, opacity 200ms ease-in;
+    transition-delay: calc((17 - var(--order)) * 35ms);
 }
 
 .home-button:hover .letter {
-    opacity: 0;
-    animation: fadeIn 600ms ease-out forwards;
-    animation-delay: calc(var(--order) * 35ms);
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 200ms ease-in, opacity 400ms ease-in;
+    transition-delay: calc((var(--order)) * 35ms);
 }
 
 .home-button {
@@ -58,17 +60,17 @@
     }
 }
 
-@keyframes fadeIn {
-    30% {
-        opacity: 0;
-        transform: translateY(40%);
-    }
+/*@keyframes fadeIn {*/
+/*    30% {*/
+/*        opacity: 0;*/
+/*        transform: translateY(40%);*/
+/*    }*/
 
-    40%, 100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/*    40%, 100% {*/
+/*        opacity: 1;*/
+/*        transform: translateY(0);*/
+/*    }*/
+/*}*/
 
 @keyframes fadeOut {
     30% {
