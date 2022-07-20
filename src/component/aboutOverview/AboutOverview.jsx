@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 import ArrowDown from "../arrowDown/ArrowDown";
 
 const AboutOverviewText = styled.p`
@@ -25,6 +26,8 @@ const AboutRedirection = styled.p`
 `;
 
 export default function AboutOverview() {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -52,7 +55,7 @@ export default function AboutOverview() {
           <br />I am also a dedicated worker who wants to learn things while
           crafting user-centric products.
         </AboutOverviewText>
-        <div
+        {/*<div
           style={{
             display: "flex",
             marginTop: "6rem",
@@ -61,7 +64,7 @@ export default function AboutOverview() {
         >
           <a
             className="cursor-hover"
-            href="/"
+            href="/about"
             style={{
               flexShrink: 0,
               flexGrow: 0,
@@ -85,7 +88,7 @@ export default function AboutOverview() {
               <ArrowDown />
             </div>
           </a>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
