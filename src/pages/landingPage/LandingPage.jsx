@@ -110,7 +110,6 @@ export default function LandingPage() {
       style={{
         minHeight: "600px",
         width: "100vw",
-        height: "200vh",
       }}
     >
       {/*Orbs fixed at the top */}

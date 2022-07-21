@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 // Pages
 const Home = lazy(() => import("./pages/landingPage/LandingPage"));
+const About = lazy(() => import("../src/pages/aboutPage/AboutPage"));
 
 function App() {
   useLayoutEffect(() => {
@@ -19,7 +20,12 @@ function App() {
   });
 
   return (
-    <>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <div id="cursor" className="cursor whole-cursor" />
       <div id="cursor-point" className="cursor-point whole-cursor" />
 
@@ -27,11 +33,12 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} exact />
+            <Route path="/about" element={<About />} exact />
             <Route path="*" element={<div>404 Not found</div>} />
           </Routes>
         </Router>
       </Suspense>
-    </>
+    </div>
   );
 }
 

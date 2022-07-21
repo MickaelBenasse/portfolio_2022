@@ -1,13 +1,14 @@
 body {
     background-color: #FEFAE0;
     margin: 0;
-    max-width: 100vw;
-    overflow-x: hidden;
+    padding: 0;
+    height: 100%;
 }
 
 html {
     scroll-behavior: smooth;
     cursor: none;
+    height: 100%;
 }
 
 .whole-cursor {

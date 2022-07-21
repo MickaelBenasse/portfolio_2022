@@ -55,7 +55,7 @@ export default function AboutOverview() {
           <br />I am also a dedicated worker who wants to learn things while
           crafting user-centric products.
         </AboutOverviewText>
-        {/*<div
+        <div
           style={{
             display: "flex",
             marginTop: "6rem",
@@ -88,7 +88,7 @@ export default function AboutOverview() {
               <ArrowDown />
             </div>
           </a>
-        </div>*/}
+        </div>
       </div>
     </div>
   );
