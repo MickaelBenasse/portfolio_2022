@@ -1,0 +1,51 @@
+.section {
+    min-height: 500px;
+}
+
+.pageWrapper {
+    padding: 2rem 4rem 0 4rem;
+}
+
+.contentWrapper {
+    padding-inline: 5%;
+    margin-top: 2.5%;
+}
+
+.title {
+    font-family: "Butler", sans-serif;
+    font-weight: 300;
+    font-size: 7rem;
+    text-align: center;
+    margin: 0;
+}
+
+.title-hover {
+    position: absolute;
+    color: #D4A373;
+    opacity: 0.5;
+}
+
+.me {
+    text-decoration: underline;
+    padding-inline: 1rem;
+    position: relative;
+    z-index: 1;
+    transition: opacity 250ms ease-in-out;
+
+}
+
+.image {
+    position: absolute;
+    width: 350px;
+    height: 467px;
+    border-radius: 10px;
+}
+
+.hover-wrapper {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    /*visibility: hidden;*/
+    transition: opacity 250ms ease-in-out;
+}
+

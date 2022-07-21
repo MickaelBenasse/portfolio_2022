@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { random } from "../../functions/functions";
+import { random, waiting } from "../../functions/functions";
 import styled from "styled-components";
 
 const WorkTitle = styled.text.attrs((props) => ({ id: `${props.id}` }))`
@@ -113,10 +113,6 @@ export default function AnimatedBlob({ title, colorPalette, img, underText }) {
       positionText();
     });
   });
-
-  async function waiting() {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-  }
 
   initialPath = blobArray[Math.ceil(random(0, blobArray.length - 1))];
   // Create the animation shape; we will have 5 blob of shape different and then add the first one as the last one to create a loop.

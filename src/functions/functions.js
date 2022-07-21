@@ -22,3 +22,7 @@ export function scrollTo(element) {
 export function copy() {
   navigator.clipboard.writeText("mickaelbenasse@gmail.com").then();
 }
+
+export async function waiting() {
+  await new Promise((resolve) => setTimeout(resolve, 500));
+}
