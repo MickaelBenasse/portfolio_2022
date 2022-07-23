@@ -59,27 +59,3 @@
         transition: none;
     }
 }
-
-/*@keyframes fadeIn {*/
-/*    30% {*/
-/*        opacity: 0;*/
-/*        transform: translateY(40%);*/
-/*    }*/
-
-/*    40%, 100% {*/
-/*        opacity: 1;*/
-/*        transform: translateY(0);*/
-/*    }*/
-/*}*/
-
-@keyframes fadeOut {
-    30% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-
-    40%, 100% {
-        opacity: 0;
-        transform: translateY(40%);
-    }
-}

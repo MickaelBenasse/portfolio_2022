@@ -4,7 +4,6 @@ import NavigationBar from "../../component/navigationBar/NavigationBar";
 import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
 import ArrowDown from "../../component/arrowDown/ArrowDown";
 import WorkOverview from "../../component/workOverview/WorkOverview";
-import assetImage from "../../assets/images/test_image.jpg";
 import soloso from "../../assets/images/SoLoSo.png";
 import assoEsaip from "../../assets/images/AssoEsaip.png";
 import digiole from "../../assets/images/Digiole.png";
