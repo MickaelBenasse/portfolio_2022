@@ -2,7 +2,8 @@ import React, { useLayoutEffect } from "react";
 import HomeButton from "../../component/homeButton/HomeButton";
 import myImage from "../../assets/images/BW-Mickael-benasse.jpg";
 import "./aboutPage.css";
-import { waiting } from "../../functions/functions";
+import { cursorHover, waiting } from "../../functions/functions";
+import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
 
 export default function AboutPage() {
   useLayoutEffect(() => {
@@ -24,6 +25,8 @@ export default function AboutPage() {
       meText.style.opacity = "1";
       hoverWrapper.style.opacity = "0";
     });
+
+    cursorHover();
   });
 
   function positionHoverWrapper() {
@@ -48,14 +51,24 @@ export default function AboutPage() {
 
   return (
     <section className="section">
+      <div
+        style={{
+          zIndex: -1,
+          position: "absolute",
+          overflowY: "hidden",
+          height: "100vh",
+        }}
+      >
+        <AnimatedOrbs />
+      </div>
       <div className="pageWrapper">
         <HomeButton />
         <div className="contentWrapper">
           <div>
             <h1 className="title">
               I’m Mickaël Benasse and this is
-              <span className="me">me</span>
-              (obviously).I’m a french front-end developper and proud newbie
+              <span className="me cursor-hover">me</span>
+              (obviously). I’m a french front-end developper and proud newbie
               home cook.
             </h1>
             <div className="hover-wrapper">
@@ -67,7 +80,7 @@ export default function AboutPage() {
               <p className="title title-hover">
                 I’m Mickaël Benasse and this is
                 <span className="me">me</span>
-                (obviously).I’m a french front-end developper and proud newbie
+                (obviously). I’m a french front-end developper and proud newbie
                 home cook.
               </p>
             </div>
