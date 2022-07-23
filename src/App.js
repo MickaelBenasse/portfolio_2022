@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 // Pages
 const Home = lazy(() => import("./pages/landingPage/LandingPage"));
 const About = lazy(() => import("../src/pages/aboutPage/AboutPage"));
+const PageNotFound = lazy(() => import("../src/pages/404/404"));
 
 function App() {
   useLayoutEffect(() => {
@@ -34,7 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/about" element={<About />} exact />
-            <Route path="*" element={<div>404 Not found</div>} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
       </Suspense>
