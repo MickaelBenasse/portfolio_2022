@@ -5,6 +5,15 @@ body {
     height: 100%;
 }
 
+p, a{
+    font-family: "Butler", sans-serif;
+    margin: 0;
+    font-weight: 300;
+    cursor: none;
+    text-decoration: none;
+    color: black;
+}
+
 html {
     scroll-behavior: smooth;
     cursor: none;
