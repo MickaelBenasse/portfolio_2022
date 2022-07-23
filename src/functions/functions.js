@@ -26,3 +26,25 @@ export function copy() {
 export async function waiting() {
   await new Promise((resolve) => setTimeout(resolve, 500));
 }
+
+export function cursorHover() {
+  // Animation on the cursor
+  const cursorHover = document.querySelectorAll(".cursor-hover");
+  const cursor = document.getElementById("cursor");
+
+  // Classic hover with opacity
+  cursorHover.forEach(function (elementHover) {
+    elementHover.addEventListener("mouseenter", () => {
+      cursor.style.height = "60px";
+      cursor.style.width = "60px";
+      cursor.style.backgroundColor = "#606C38";
+      cursor.style.opacity = "0.5";
+    });
+
+    elementHover.addEventListener("mouseleave", () => {
+      cursor.style.height = "30px";
+      cursor.style.width = "30px";
+      cursor.style.backgroundColor = "transparent";
+    });
+  });
+}

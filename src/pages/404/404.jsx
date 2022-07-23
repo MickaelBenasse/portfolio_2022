@@ -1,10 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useLayoutEffect } from "react";
 import video from "../../assets/videos/VincentVega.gif";
 import "./404.css";
 import AnimatedOrbs from "../../component/orbs/AnimatedOrbs";
+import { cursorHover } from "../../functions/functions";
 
 export default function PageNotFound() {
+  // Animation on the cursor
+  useLayoutEffect(() => {
+    cursorHover();
+  });
+
   return (
     <div>
       <div
